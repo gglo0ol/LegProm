@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Введите ключ</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/bootstrap.min.css') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/logo/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/logo/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/logo/favicon-16x16.png">
+    <link rel="manifest" href="/static/logo/site.webmanifest">
+</head>
+
+<body class="container mt-5">
+    <div class="jumbotron">
+        <h1 class="display-4">Введите ключ</h1>
+        <form action="/index" method="get">
+            <div class="mb-3">
+                <label for="inputData" class="form-label">Введите ключ для проверки компании на сайте ФНС</label>
+                <input type="text" class="form-control" id="inputData" name="key" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Отправить</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Запрос</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/bootstrap.min.css') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/logo/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/logo/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/logo/favicon-16x16.png">
+    <link rel="manifest" href="/static/logo/site.webmanifest">
+</head>
+<body class="container mt-5">
+    {% for result in row %}
+    <div class="card mb-3">
+        <div class="card-body">
+            <h5 class="card-title">Результат запроса:</h5>
+            <p class="card-text">ИНН организации {{ result.inn }}</p>
+            <p class="card-text">Положительные: {{ result.positive }}</p>
+            <p class="card-text">Отрицательные: {{ result.negative }}</p>
+            <a href="/index" class="btn btn-primary">Вернуться на главную</a>
+            <a href="/delete?inn={{ result.inn }}" class="btn btn-danger">Удалить</a>
+        </div>
+    </div>
+    {% endfor %}
+</body>
+</html>
